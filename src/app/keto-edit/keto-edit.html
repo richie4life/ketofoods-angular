@@ -1,0 +1,26 @@
+<div class="keto-details container">
+    <img class="keto-picture" src="{{currentKeto().image || './ketoFoods/Chicken suya.jpg'}}">
+
+    <div class="text-details">
+        <form [formGroup]="ketoForm">
+             <label for="title">Title : </label>
+             <input id="title" class="form-control" formControlName="title" type="text">
+
+             <label for="calories" class="d_inline">Calories : </label>
+             <input id="calories" class="form-control" formControlName="calories" type="number">
+
+             <label for="fat">Fat : </label>
+             <input id="fat" class="form-control" formControlName="fat" type="number">
+
+             <label for="protein">Protein : </label>
+             <input id="protein" class="form-control" formControlName="protein" type="number">
+
+             <label for="netCarbs">NetCarbs : </label>
+             <input id="netCarbs" class="form-control" formControlName="netCarbs" type="number">
+        </form>
+
+        <div class="text-center mt-3"></div>
+        <button class="btn btn-primary" (click)="saveKeto()">Save</button>
+    </div>
+</div>
+

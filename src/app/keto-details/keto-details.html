@@ -1,0 +1,16 @@
+<div class="keto-details container">
+    <img class="keto-picture" src="{{currentKeto().image || './ketoFoods/Chicken suya.jpg'}}">
+    <div class="text-details text-center">
+        <h3>{{ currentKeto().title }} Details :</h3>
+        <div><span>ID : </span> {{ currentKeto().id }}</div>
+        <div><span>Calories : </span> {{ currentKeto().calories }} kcal</div>
+        <div><span>Fat : </span> {{ currentKeto().fat }} g</div>
+        <div><span>Protein : </span> {{ currentKeto().protein }} g</div>
+        <div><span>NetCarbs : </span> {{ currentKeto().netCarbs }} g</div>
+
+        <div class="mt-3">
+            <a class="btn btn-success" [routerLink]="['/keto/edit', currentKeto().id]">Edit</a>
+            <button class="btn btn-danger ms-5" (click)="deleteKeto()">Delete</button>
+        </div>
+    </div>
+</div>

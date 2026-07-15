@@ -1,0 +1,11 @@
+<div class="keto-overview">
+    <img class="keto-picture" src="{{currentKeto().image || './ketoFoods/Chicken suya.jpg'}}">
+    <br>
+    <!-- routerLink to details -->
+     <a [routerLink]="['/keto', currentKeto().id]">Details...</a>
+     <div><span>Title : </span>{{currentKeto().title}}</div>
+     <div><span>Calories : </span>{{currentKeto().calories}}</div>
+     <div><span>Fat : </span>{{currentKeto().fat}}</div>
+     <div><span>Protein : </span>{{currentKeto().protein}}</div>
+     <div><span>NetCarbs : </span>{{currentKeto().netCarbs}}</div>
+</div>

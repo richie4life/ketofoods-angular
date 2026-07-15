@@ -1,0 +1,29 @@
+<div class="keto-details container">
+    <div class="text-details">
+        <form [formGroup]="newKetoForm">
+            <label for="title">Title : </label>
+             <input id="title" class="form-control" formControlName="title" type="text">
+
+             <label for="calories" class="d_inline">Calories : </label>
+             <input id="calories" class="form-control" formControlName="calories" type="number" required>
+
+             <label for="fat">Fat : </label>
+             <input id="fat" class="form-control" formControlName="fat" type="number" required>
+
+             <label for="protein">Protein : </label>
+             <input id="protein" class="form-control" formControlName="protein" type="number" required>
+
+             <label for="netCarbs">NetCarbs : </label>
+             <input id="netCarbs" class="form-control" formControlName="netCarbs" type="number" required>
+            
+            <!-- TODO: Allow image uploads on UI and API-->
+
+            <label for="image">Upload Image : </label>
+            <input id="image" class="form-control" formControlName="imageUrl" type="file" (change)="onFileSelected($event)">
+
+        </form>
+
+        <div class="text-center mt-3"></div>
+        <button class="btn btn-primary" (click)="createKeto()">Create</button>
+    </div>
+</div>

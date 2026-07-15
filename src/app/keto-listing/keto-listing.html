@@ -1,0 +1,10 @@
+<div class="inline-float-right">
+    <a class="btn btn-success" [routerLink]="['/ketos/create']">Create Keto</a>
+</div> 
+<br>
+
+Total of {{ ketos().length }} ketofoods: <br>
+
+@for (keto of ketos(); track $index) {
+    <app-keto-overview [currentKeto]="keto"></app-keto-overview>
+}
