@@ -1,23 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
-.keto-details {
-    width: 80%;
-    padding: 1.5em;
-    background-color: #b6b6d6;
-    text-align: center;
-
+/* Define theme variables and modern design tokens */
+:root {
+  --primary-color: #1b4d3e; /* Forest green */
+  --primary-hover: #12352b;
+  --accent-color: #aed581; /* Soft green */
+  --bg-color: #f7f9fb; /* Light grayish-blue bg */
+  --card-bg: #ffffff;
+  
+  /* Macronutrients Colors */
+  --color-calories: #495057;
+  --color-fat: #f59f00;
+  --color-protein: #d6336c;
+  --color-carbs: #1c7ed6;
+  
+  --bg-calories: #f1f3f5;
+  --bg-fat: #fff9db;
+  --bg-protein: #fff0f6;
+  --bg-carbs: #e7f5ff;
+  
+  /* Text and shadows */
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --card-shadow: 0 10px 30px rgba(27, 77, 62, 0.04), 0 1px 8px rgba(0, 0, 0, 0.02);
+  --hover-shadow: 0 15px 35px rgba(27, 77, 62, 0.08), 0 3px 15px rgba(0, 0, 0, 0.03);
+  --border-radius-lg: 16px;
+  --border-radius-md: 12px;
 }
 
-.keto-picture {
-    height: 60%;
-    width: 60%;
-    display: inline-block;
-    border-radius: 10px;
+body {
+  font-family: 'Outfit', sans-serif !important;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
 }
 
+/* Glassmorphism/modern main container adjustment */
+#main {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
 
-.text-detail {
-    text-align: left;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+/* Common detail page styles */
+.keto-details-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: 2.5rem;
+  border: none;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: var(--border-radius-md) !important;
+  border: 1px solid #dee2e6 !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(27, 77, 62, 0.15) !important;
 }

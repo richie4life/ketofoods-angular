@@ -1,29 +1,54 @@
-<div class="keto-details container">
-    <div class="text-details">
+<div class="container py-2">
+    <div class="mb-3">
+        <a class="btn btn-outline-secondary btn-sm rounded-pill px-3" [routerLink]="['']">
+          &larr; Cancel
+        </a>
+    </div>
+
+    <div class="keto-details-card">
+        <h3 class="form-title mb-4">Create New Keto Food</h3>
+        
         <form [formGroup]="newKetoForm">
-            <label for="title">Title : </label>
-             <input id="title" class="form-control" formControlName="title" type="text">
+            <div class="row">
+                <!-- Title -->
+                <div class="col-12 form-group mb-3">
+                    <label for="title" class="form-label">Food Title</label>
+                    <input id="title" class="form-control" formControlName="title" type="text" placeholder="e.g. Avocado Toast with Egg">
+                </div>
 
-             <label for="calories" class="d_inline">Calories : </label>
-             <input id="calories" class="form-control" formControlName="calories" type="number" required>
+                <!-- Calories & Fat -->
+                <div class="col-md-6 form-group mb-3">
+                    <label for="calories" class="form-label">Calories (kcal)</label>
+                    <input id="calories" class="form-control" formControlName="calories" type="number" required>
+                </div>
 
-             <label for="fat">Fat : </label>
-             <input id="fat" class="form-control" formControlName="fat" type="number" required>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="fat" class="form-label">Fat (g)</label>
+                    <input id="fat" class="form-control" formControlName="fat" type="number" required>
+                </div>
 
-             <label for="protein">Protein : </label>
-             <input id="protein" class="form-control" formControlName="protein" type="number" required>
+                <!-- Protein & Net Carbs -->
+                <div class="col-md-6 form-group mb-3">
+                    <label for="protein" class="form-label">Protein (g)</label>
+                    <input id="protein" class="form-control" formControlName="protein" type="number" required>
+                </div>
 
-             <label for="netCarbs">NetCarbs : </label>
-             <input id="netCarbs" class="form-control" formControlName="netCarbs" type="number" required>
-            
-            <!-- TODO: Allow image uploads on UI and API-->
+                <div class="col-md-6 form-group mb-3">
+                    <label for="netCarbs" class="form-label">Net Carbs (g)</label>
+                    <input id="netCarbs" class="form-control" formControlName="netCarbs" type="number" required>
+                </div>
 
-            <label for="image">Upload Image : </label>
-            <input id="image" class="form-control" formControlName="imageUrl" type="file" (change)="onFileSelected($event)">
+                <!-- Image Upload -->
+                <div class="col-12 form-group mb-4">
+                    <label for="image" class="form-label">Food Image Upload</label>
+                    <input id="image" class="form-control" type="file" (change)="onFileSelected($event)">
+                </div>
+            </div>
 
+            <div class="d-flex justify-content-end gap-2 mt-2">
+                <a class="btn btn-light px-4 rounded-pill border" [routerLink]="['']">Cancel</a>
+                <button class="btn btn-custom-primary px-5 rounded-pill" (click)="createKeto()">Create Food</button>
+            </div>
         </form>
-
-        <div class="text-center mt-3"></div>
-        <button class="btn btn-primary" (click)="createKeto()">Create</button>
     </div>
 </div>

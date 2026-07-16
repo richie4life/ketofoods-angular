@@ -1,4 +1,77 @@
-.inline-float-right {
-    display: inline;
-    float: right;
+.dashboard-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.search-container {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+.search-input {
+  border-radius: var(--border-radius-md) !important;
+  background-color: #ffffff !important;
+  padding: 0.65rem 1rem !important;
+  font-size: 0.9rem !important;
+  border: 1.5px solid #e2e8f0 !important;
+}
+
+.btn-custom-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  padding: 0.65rem 1.25rem !important;
+  border-radius: var(--border-radius-md) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  box-shadow: 0 4px 10px rgba(27, 77, 62, 0.15) !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap;
+}
+
+.btn-custom-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(27, 77, 62, 0.25) !important;
+}
+
+.count-badge {
+  background-color: #ffffff;
+  color: var(--text-muted);
+  border: 1px solid #e9ecef;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+/* Grid system for food cards */
+.food-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  background-color: #ffffff;
+  border-radius: var(--border-radius-lg);
+  padding: 3rem;
+  box-shadow: var(--card-shadow);
+}
+
+.empty-state-icon {
+  font-size: 3rem;
 }

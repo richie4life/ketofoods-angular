@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Keto } from '../types/keto';
 import { KetoService } from '../keto.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-keto-create',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterModule],
   templateUrl: './keto-create.html',
   styleUrl: './keto-create.css',
 })
@@ -22,7 +22,7 @@ export class KetoCreate {
       fat: new FormControl(0),
       protein: new FormControl(0),
       netCarbs: new FormControl(0),
-      imageUrl: new FormControl(''),
+      image: new FormControl(''),
       ketoImage: new FormControl(null)
 
     })

@@ -1,11 +1,31 @@
-<div class="keto-overview">
-    <img class="keto-picture" src="{{currentKeto().image || './ketoFoods/Chicken suya.jpg'}}">
-    <br>
-    <!-- routerLink to details -->
-     <a [routerLink]="['/keto', currentKeto().id]">Details...</a>
-     <div><span>Title : </span>{{currentKeto().title}}</div>
-     <div><span>Calories : </span>{{currentKeto().calories}}</div>
-     <div><span>Fat : </span>{{currentKeto().fat}}</div>
-     <div><span>Protein : </span>{{currentKeto().protein}}</div>
-     <div><span>NetCarbs : </span>{{currentKeto().netCarbs}}</div>
+<div class="card keto-card h-100" [routerLink]="['/keto', currentKeto().id]">
+  @if (currentKeto().image && currentKeto().image !== 'null' && currentKeto().image !== '') {
+    <div class="image-wrapper">
+      <img class="card-img-top food-image" [src]="currentKeto().image" alt="Keto food image">
+    </div>
+  }
+  <div class="card-body d-flex flex-column justify-content-between p-3">
+    <div>
+      <h5 class="card-title text-truncate">{{ currentKeto().title }}</h5>
+    </div>
+    
+    <div class="macro-grid mt-3">
+      <div class="macro-badge calories">
+        <span class="value">{{ currentKeto().calories }}</span>
+        <span class="label">kcal</span>
+      </div>
+      <div class="macro-badge fat">
+        <span class="value">{{ currentKeto().fat }}g</span>
+        <span class="label">Fat</span>
+      </div>
+      <div class="macro-badge protein">
+        <span class="value">{{ currentKeto().protein }}g</span>
+        <span class="label">Protein</span>
+      </div>
+      <div class="macro-badge carbs">
+        <span class="value">{{ currentKeto().netCarbs }}g</span>
+        <span class="label">Carbs</span>
+      </div>
+    </div>
+  </div>
 </div>
